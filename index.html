@@ -1,27 +1,242 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prompt Heart</title>
-<meta name="description" content="Prompt Heart: save your best AI prompts and copy them in one tap.">
-<link rel="icon" href="icon.png">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prompt Heart · Your AI prompts, one tap away</title>
+  <meta name="description" content="Prompt Heart is a free Android app for the AI prompts that work. Save them, fill in the blanks, and copy them into ChatGPT, Claude or Gemini in one tap. 100 ready-made prompts, works offline, no ads.">
+  <meta name="theme-color" content="#F6F4EF" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Prompt Heart">
+  <meta property="og:description" content="Your AI prompts, one tap away. Free for Android, no ads.">
+  <meta property="og:image" content="https://inigo-code.github.io/prompt-heart-site/icon.png">
+  <link rel="icon" href="icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="site.css">
+  <link rel="preload" href="assets/library.json" as="fetch" type="application/json" crossorigin>
+  <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-<main>
-  <header class="brand"><img src="icon.png" alt=""><a href="./">Prompt Heart</a></header>
-  <h1>Your AI prompts, one tap away.</h1>
-  <p class="muted">Prompt Heart is a notes-style app for the prompts that work. Save them, fill in {{placeholders}}, copy in one tap, and open ChatGPT, Claude, Gemini and more. It works offline, and an optional account syncs your prompts across devices.</p>
+<main id="top">
 
-  <div class="links">
-    <a href="fdroid.html">Get it on F-Droid<span>Install from the Prompt Heart repository and get updates automatically.</span></a>
-    <a href="privacy.html">Privacy policy<span>What the app stores, where, and why.</span></a>
-    <a href="delete-account.html">Delete your account<span>How to delete your account and its data, with or without the app.</span></a>
-    <a href="mailto:inigo@tosstheworld.org?subject=Prompt%20Heart">Contact<span>inigo@tosstheworld.org</span></a>
-  </div>
+  <header class="bar wrap">
+    <a class="mark" href="#top" aria-label="Prompt Heart, back to top"><img src="icon.png" width="40" height="40" alt=""><span>Prompt Heart</span></a>
+    <nav class="bar-links" aria-label="Sections">
+      <a class="link" href="#inside">Inside</a>
+      <a class="link" href="#library">Library</a>
+      <a class="link" href="#install">Install</a>
+      <a class="link" href="#questions">Questions</a>
+    </nav>
+  </header>
 
-  <footer>Prompt Heart is made by Inigo.</footer>
+  <!-- The fill-in-the-blanks sheet, working, on a stage whose corner is the end of a placeholder chip. -->
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-text">
+      <h1 id="hero-title" class="display"><span data-rise style="--i:0">Your AI prompts,</span> <span data-rise style="--i:1">one tap away</span></h1>
+      <p class="hero-lede" data-rise style="--i:2">Prompt Heart is a free Android app for the prompts that work. Save them, fill in the blanks, and paste them into ChatGPT, Claude or Gemini in one tap.</p>
+      <p class="hero-actions" data-rise style="--i:3">
+        <a class="button" href="https://github.com/inigo-code/prompt-heart/releases/download/v1.6.0/promptheart-1.6.0.apk">Download for Android</a>
+        <a class="link link-plain" href="fdroid.html">or get it on F-Droid</a>
+      </p>
+    </div>
+
+    <div class="stage" id="try">
+      <form class="sheet" data-ui id="filler" aria-labelledby="filler-title" autocomplete="off">
+        <span class="grab" aria-hidden="true"></span>
+        <h2 id="filler-title" class="sheet-title">Try it: fill in the blanks</h2>
+        <div class="sheet-picks" role="radiogroup" aria-label="Prompt to fill" id="filler-picks">
+          <button type="button" role="radio" aria-checked="true" data-id="mkt-social-posts">Social media posts</button>
+          <button type="button" role="radio" aria-checked="false" data-id="img-cinematic">Cinematic scene</button>
+          <button type="button" role="radio" aria-checked="false" data-id="prod-decision">Help me decide</button>
+          <button type="button" role="radio" aria-checked="false" data-id="wri-tone">Change the tone</button>
+        </div>
+        <div class="sheet-fields" id="filler-fields">
+          <label><span>Number of posts</span><input name="number of posts" value="5"></label>
+          <label><span>Platform</span><input name="platform" value="LinkedIn"></label>
+          <label><span>Topic</span><input name="topic" placeholder="Enter topic"></label>
+          <label><span>Audience</span><input name="audience" placeholder="Enter audience"></label>
+        </div>
+        <p class="sheet-preview" id="filler-preview" aria-live="polite">Write 5 LinkedIn posts about <mark>{{topic}}</mark> for <mark>{{audience}}</mark>. Give each a strong hook in the first line, one clear idea, and a call to action. Vary the formats.</p>
+        <div class="sheet-actions">
+          <button type="button" class="button" id="filler-copy">Copy</button>
+          <a class="button button-tone" id="filler-chatgpt" href="https://chatgpt.com/" target="_blank" rel="noopener">Open in ChatGPT</a>
+          <a class="button button-tone" id="filler-claude" href="https://claude.ai/new" target="_blank" rel="noopener">Open in Claude</a>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- Inside the app: the real screens on a tall chip -->
+  <section id="inside" class="showcase wrap" aria-labelledby="inside-title">
+    <div class="showcase-stage" id="showcase-stage" data-tone="accent">
+      <figure class="showcase-shot shutter" data-reveal>
+        <img id="showcase-img" src="assets/screens/home.webp" width="780" height="1688" alt="The home screen: pinned prompts, categories, and an Open bar for ChatGPT, Claude and Gemini" decoding="async">
+      </figure>
+    </div>
+    <div class="showcase-list">
+      <h2 id="inside-title" class="showcase-head">Inside the app</h2>
+      <div class="showcase-names" role="tablist" aria-label="Screens" id="showcase-tabs">
+        <button role="tab" aria-selected="true" data-img="assets/screens/home.webp" data-tone="accent" data-fact="Pinned prompts first, then the ones you edited last. Every card shows its category, its blanks and a rough token count." data-alt="The home screen: pinned prompts, categories, and an Open bar for ChatGPT, Claude and Gemini">Your prompts</button>
+        <button role="tab" aria-selected="false" data-img="assets/screens/fill.webp" data-tone="soft" data-fact="Blanks with a default come filled in. Type the rest and the preview updates as you go, then copy." data-alt="The fill-in sheet for Social media posts, with the topic and audience typed in and the finished prompt below">Fill in the blanks</button>
+        <button role="tab" aria-selected="false" data-img="assets/screens/library.webp" data-tone="ink" data-fact="100 prompts in 10 categories. Copy one as it is, or save it to your own prompts and make it yours." data-alt="The prompt library: image generation prompts with Copy and Save buttons">The library</button>
+        <button role="tab" aria-selected="false" data-img="assets/screens/view.webp" data-tone="chip" data-fact="Prompts open read-only, with headings, lists and code shown formatted. Copying gives the AI the plain Markdown." data-alt="A saved prompt shown read-only, with formatted headings, a numbered list, a quote and a code block">Read, then edit</button>
+        <button role="tab" aria-selected="false" data-img="assets/screens/history.webp" data-tone="soft" data-fact="A version is kept each time you start editing. Restore an older wording with one tap." data-alt="Version history for Senior code review, with two earlier versions">Version history</button>
+        <button role="tab" aria-selected="false" data-img="assets/screens/settings.webp" data-tone="accent" data-fact="Lock the app with your fingerprint or screen lock. It also hides your prompts in the recent-apps screen." data-alt="Settings with App lock and the list of AI apps you can turn on">App lock</button>
+      </div>
+    </div>
+    <p class="showcase-fact" id="showcase-fact" aria-live="polite">Pinned prompts first, then the ones you edited last. Every card shows its category, its blanks and a rough token count.</p>
+  </section>
+
+  <!-- Close-ups of the small parts that save time -->
+  <section class="board wrap" aria-labelledby="board-title">
+    <div class="tile t-head" data-reveal>
+      <h2 id="board-title" class="head">Small parts, big shortcuts</h2>
+    </div>
+    <div class="tile t-lock tone-ink" data-reveal>
+      <div class="close" data-ui aria-hidden="true"><span class="toggle is-on"><span></span></span></div>
+      <p class="cap"><strong>App lock</strong><span>Fingerprint, face or screen lock.</span></p>
+    </div>
+    <div class="tile t-tok tone-chip" data-reveal>
+      <div class="close close-figure" data-ui aria-hidden="true"><span class="nums">~58 tok</span></div>
+      <p class="cap"><strong>Token estimate</strong><span>See a prompt’s length before you paste.</span></p>
+    </div>
+    <div class="tile t-open tone-accent" data-reveal>
+      <div class="close close-pills" data-ui aria-hidden="true">
+        <span class="app-pill"><i style="background:#10A37F">GPT</i>ChatGPT</span>
+        <span class="app-pill"><i style="background:#D97757">Cl</i>Claude</span><!-- taste-skill-ignore: the app's own Claude badge colour -->
+
+        <span class="app-pill"><i style="background:#4285F4">Ge</i>Gemini</span>
+      </div>
+      <p class="cap"><strong>Copy and open</strong><span>One tap copies the prompt and opens ChatGPT, Claude, Gemini, Grok, Perplexity and more.</span></p>
+    </div>
+    <div class="tile t-count tone-soft" data-reveal>
+      <div class="close close-figure close-big" data-ui aria-hidden="true"><span class="nums">23×</span></div>
+      <p class="cap"><strong>Your favourites</strong><span>Every copy is counted. Recently copied keeps them close.</span></p>
+    </div>
+    <div class="tile t-history tone-card" data-reveal>
+      <div class="close close-stack" data-ui aria-hidden="true">
+        <span class="is-sel">Today, 14:20</span><span>Yesterday</span><span>4 days ago</span>
+      </div>
+      <p class="cap"><strong>Every version kept</strong><span>Restore an older wording in one tap.</span></p>
+    </div>
+    <div class="tile t-format tone-chip" data-reveal>
+      <div class="close close-keys" data-ui aria-hidden="true"><b>B</b><i>I</i><span>H</span><span>{&#8202;}</span></div>
+      <p class="cap"><strong>Edit on purpose</strong><span>Prompts open read-only. Tap Edit for formatting, undo and redo.</span></p>
+    </div>
+    <div class="tile t-trash tone-card" data-reveal>
+      <div class="close close-figure" data-ui aria-hidden="true"><span class="nums">30 days</span></div>
+      <p class="cap"><strong>Trash with undo</strong><span>Deleted prompts wait before they go.</span></p>
+    </div>
+    <div class="tile t-offline tone-accent" data-reveal>
+      <div class="close close-status" data-ui aria-hidden="true"><span class="dot"></span>Synced</div>
+      <p class="cap"><strong>Works offline</strong><span>No account needed. Sign in only to sync.</span></p>
+    </div>
+  </section>
+
+  <!-- The library: categories as tabs, prompts as bands -->
+  <section id="library" class="library wrap" aria-labelledby="library-title">
+    <div class="library-top" data-reveal>
+      <h2 id="library-title" class="head">100 prompts, ready to use</h2>
+      <a class="button" href="https://github.com/inigo-code/prompt-heart/releases/download/v1.6.0/promptheart-1.6.0.apk">Get the app</a>
+    </div>
+    <div class="library-body">
+      <div class="cats" role="tablist" aria-label="Library categories" id="cats">
+        <button role="tab" aria-selected="true" data-cat="image">Image generation<small>14 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="productivity">Productivity<small>11 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="business">Business<small>12 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="marketing">Marketing<small>11 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="writing">Writing<small>10 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="coding">Coding<small>12 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="research">Research<small>7 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="learning">Learning<small>9 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="career">Career<small>8 prompts</small></button>
+        <button role="tab" aria-selected="false" data-cat="prompting">Prompt writing<small>6 prompts</small></button>
+      </div>
+      <ul class="bands" id="bands" role="tabpanel" aria-labelledby="library-title">
+        <li><span class="tok nums">~62 tok</span><span class="what"><strong>Photorealistic portrait</strong><small>A photorealistic portrait of {{subject}}, {{lighting|soft window light}}, shot on an 85mm lens…</small></span><span class="blanks"><i>subject</i><i>lighting</i><i>+2</i></span></li>
+        <li><span class="tok nums">~67 tok</span><span class="what"><strong>Studio product shot</strong><small>Studio product photo of {{product}} on a {{surface|matte stone pedestal}}…</small></span><span class="blanks"><i>product</i><i>surface</i><i>+2</i></span></li>
+        <li><span class="tok nums">~57 tok</span><span class="what"><strong>Cinematic scene</strong><small>A cinematic wide shot of {{scene}} at {{time of day|golden hour}}, anamorphic lens…</small></span><span class="blanks"><i>scene</i><i>time of day</i><i>+2</i></span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- From install to first copy: the progress bar as the diagram -->
+  <section id="install" class="steps wrap" aria-labelledby="steps-title">
+    <h2 id="steps-title" class="display-2" data-reveal>From install to first copy</h2>
+    <ol class="bar-steps" data-ui>
+      <li class="seg seg-1" data-reveal>
+        <span class="seg-fill"><span class="seg-time">About a minute</span></span>
+        <p>First, install it from <a class="link-plain" href="fdroid.html">F-Droid</a> or download the <a class="link-plain" href="https://github.com/inigo-code/prompt-heart/releases/download/v1.6.0/promptheart-1.6.0.apk">APK</a>.</p>
+      </li>
+      <li class="seg seg-2" data-reveal style="--i:1">
+        <span class="seg-fill"><span class="seg-time">Seconds</span></span>
+        <p>Then save a prompt of your own, or take one of the 100 in the library.</p>
+      </li>
+      <li class="seg seg-3" data-reveal style="--i:2">
+        <span class="seg-fill"><span class="seg-time">One tap</span></span>
+        <p>Last, fill the blanks and tap Copy, or open it straight in your AI app.</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- Who makes it -->
+  <section class="about" aria-labelledby="about-title">
+    <div class="about-panel">
+      <div class="about-left">
+        <h2 id="about-title" class="head" data-reveal>One maker. No&nbsp;ads, ever.</h2>
+        <figure class="about-mark" data-reveal><img src="assets/mark.webp" width="640" height="640" alt="The Prompt Heart icon: a stack of amber note cards with a smile and a heart" loading="lazy"></figure>
+      </div>
+      <div class="about-right">
+        <div data-reveal>
+          <h3>Why it exists</h3>
+          <p>Good prompts get lost in chats, notes and screenshots. Prompt Heart keeps the ones that work in one place, ready for whichever AI app you open today.</p>
+        </div>
+        <div data-reveal>
+          <h3>What it won’t do</h3>
+          <p>No ads, no tracking and nothing to buy. Your prompts stay on your phone unless you choose to sync them, and you can delete your account at any time.</p>
+        </div>
+        <a class="button" href="mailto:inigo@tosstheworld.org?subject=Prompt%20Heart" data-reveal>Write to Inigo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Questions -->
+  <section id="questions" class="faq wrap" aria-labelledby="faq-title">
+    <h2 id="faq-title" class="head faq-head">Questions</h2>
+    <div class="faq-list">
+      <details name="faq" open><summary>Is it free?</summary><p>Yes, completely. There are no ads, no subscriptions and no paid extras.</p></details>
+      <details name="faq"><summary>Do I need an account?</summary><p>No. Everything works offline without one. An account only adds sync, so your prompts and categories follow you to another phone.</p></details>
+      <details name="faq"><summary>Where are my prompts kept?</summary><p>On your phone. If you sign in, a copy is kept in your private account so your devices stay in sync. The <a class="link-plain" href="privacy.html">privacy policy</a> lists exactly what is stored and where.</p></details>
+      <details name="faq"><summary>Which AI apps does it work with?</summary><p>ChatGPT, Claude, Gemini, Grok, Perplexity, Copilot, DeepSeek and Le Chat. ChatGPT, Claude, Grok and Perplexity open with your prompt already typed in; for the others it’s on your clipboard, ready to paste.</p></details>
+      <details name="faq"><summary>What are the blanks in a prompt?</summary><p>Write <code>{{topic}}</code> where a prompt changes each time, or <code>{{tone|friendly}}</code> to give it a default. When you copy, Prompt Heart asks for each blank and fills them in.</p></details>
+      <details name="faq"><summary>How do I get updates?</summary><p>From F-Droid, updates arrive like any other app. If you installed the APK, Prompt Heart tells you when a new version is out.</p></details>
+      <details name="faq"><summary>Is it on Google Play or iPhone?</summary><p>It’s an Android app. For now you install it from F-Droid or the APK here; Google Play is next. There is no iPhone version.</p></details>
+      <details name="faq"><summary>How do I delete my account?</summary><p>In the app, open Settings, tap Cloud sync, then Delete account. You can also <a class="link-plain" href="delete-account.html">ask for it to be deleted</a> without the app.</p></details>
+    </div>
+  </section>
+
 </main>
+
+<footer class="foot">
+  <div class="wrap">
+    <a class="blocks" href="#top" aria-label="Prompt Heart, back to top">
+      <span style="--h:100%">P</span><span style="--h:78%">R</span><span style="--h:88%">O</span><span style="--h:70%">M</span><span style="--h:94%">P</span><span style="--h:82%">T</span><span class="gap" aria-hidden="true"></span><span class="b-heart" style="--h:100%">H</span><span class="b-heart" style="--h:74%">E</span><span class="b-heart" style="--h:90%">A</span><span class="b-heart" style="--h:68%">R</span><span class="b-heart" style="--h:86%">T</span>
+    </a>
+    <div class="foot-cols">
+      <nav aria-label="Get the app"><h3>Get it</h3><a class="link" href="https://github.com/inigo-code/prompt-heart/releases/download/v1.6.0/promptheart-1.6.0.apk">Download the APK</a><a class="link" href="fdroid.html">F-Droid</a><a class="link" href="https://github.com/inigo-code/prompt-heart/releases">All releases</a></nav>
+      <nav aria-label="Help"><h3>Help</h3><a class="link" href="privacy.html">Privacy policy</a><a class="link" href="delete-account.html">Delete your account</a><a class="link" href="#questions">Questions</a></nav>
+      <nav aria-label="Also by Inigo"><h3>Also by Inigo</h3><a class="link" href="https://inigo-code.github.io/watch-heart-site/">Watch Heart</a><a class="link" href="https://github.com/inigo-code">GitHub</a></nav>
+      <div class="foot-contact"><h3>Contact</h3><a class="link" href="mailto:inigo@tosstheworld.org?subject=Prompt%20Heart">inigo@tosstheworld.org</a><p>Questions, ideas and bugs are all welcome.</p></div>
+    </div>
+    <div class="foot-last">
+      <p>© 2026 Inigo. All rights reserved.</p>
+      <a class="button button-small" href="https://github.com/inigo-code/prompt-heart/releases/download/v1.6.0/promptheart-1.6.0.apk">Download</a>
+    </div>
+  </div>
+</footer>
+
+<script src="site.js" defer></script>
 </body>
 </html>
