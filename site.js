@@ -150,8 +150,18 @@ const libraryReady = fetch('assets/library.json').then((r) => r.json()).catch(()
   const lib = await libraryReady;
   if (!cats.length || !bands || !lib) return;
 
+  const more = document.getElementById('bands-more');
+  const FIRST = matchMedia('(min-width: 64em)').matches ? 8 : 5;
+  let current = 'image';
+  let all = false;
   const show = (key) => {
-    const items = lib.prompts.filter((p) => p.c === key);
+    current = key;
+    const every = lib.prompts.filter((p) => p.c === key);
+    const items = all ? every : every.slice(0, FIRST);
+    const label = [...cats].find((t) => t.dataset.cat === key)?.firstChild.textContent ?? '';
+    more.hidden = every.length <= FIRST;
+    more.setAttribute('aria-expanded', String(all));
+    more.textContent = all ? 'Show fewer' : `Show all ${every.length} ${label.toLowerCase()} prompts`;
     bands.innerHTML = items
       .map((p) => {
         const blanks = blanksOf(p.b).map((b) => b.name);
@@ -162,7 +172,13 @@ const libraryReady = fetch('assets/library.json').then((r) => r.json()).catch(()
       })
       .join('');
   };
+  more.addEventListener('click', () => {
+    all = !all;
+    show(current);
+    if (!all) document.getElementById('library').scrollIntoView({ block: 'start' });
+  });
   const select = (tab, focus) => {
+    all = false;
     cats.forEach((t) => { t.setAttribute('aria-selected', String(t === tab)); t.tabIndex = t === tab ? 0 : -1; });
     if (focus) tab.focus();
     bands.classList.add('is-swapping');

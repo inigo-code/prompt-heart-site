@@ -28,6 +28,7 @@
       <a class="link" href="#library">Library</a>
       <a class="link" href="#install">Install</a>
       <a class="link" href="#questions">Questions</a>
+      <a class="link" href="https://github.com/inigo-code/prompt-heart">GitHub</a>
     </nav>
   </header>
 
@@ -47,7 +48,7 @@
         <span class="grab" aria-hidden="true"></span>
         <h2 id="filler-title" class="sheet-title">Try it: fill in the blanks</h2>
         <div class="sheet-picks" role="radiogroup" aria-label="Prompt to fill" id="filler-picks">
-          <button type="button" role="radio" aria-checked="true" data-id="mkt-social-posts">Social media posts</button>
+          <button type="button" role="radio" aria-checked="true" data-id="mkt-social-posts">Social posts</button>
           <button type="button" role="radio" aria-checked="false" data-id="img-cinematic">Cinematic scene</button>
           <button type="button" role="radio" aria-checked="false" data-id="prod-decision">Help me decide</button>
           <button type="button" role="radio" aria-checked="false" data-id="wri-tone">Change the tone</button>
@@ -154,11 +155,14 @@
         <button role="tab" aria-selected="false" data-cat="career">Career<small>8 prompts</small></button>
         <button role="tab" aria-selected="false" data-cat="prompting">Prompt writing<small>6 prompts</small></button>
       </div>
+      <div class="bands-col">
       <ul class="bands" id="bands" role="tabpanel" aria-labelledby="library-title">
         <li><span class="tok nums">~62 tok</span><span class="what"><strong>Photorealistic portrait</strong><small>A photorealistic portrait of {{subject}}, {{lighting|soft window light}}, shot on an 85mm lens…</small></span><span class="blanks"><i>subject</i><i>lighting</i><i>+2</i></span></li>
         <li><span class="tok nums">~67 tok</span><span class="what"><strong>Studio product shot</strong><small>Studio product photo of {{product}} on a {{surface|matte stone pedestal}}…</small></span><span class="blanks"><i>product</i><i>surface</i><i>+2</i></span></li>
         <li><span class="tok nums">~57 tok</span><span class="what"><strong>Cinematic scene</strong><small>A cinematic wide shot of {{scene}} at {{time of day|golden hour}}, anamorphic lens…</small></span><span class="blanks"><i>scene</i><i>time of day</i><i>+2</i></span></li>
       </ul>
+      <button type="button" class="more" id="bands-more" aria-controls="bands" aria-expanded="false" hidden>Show all 14 prompts</button>
+      </div>
     </div>
   </section>
 
@@ -197,6 +201,11 @@
           <h3>What it won’t do</h3>
           <p>No ads, no tracking and nothing to buy. Your prompts stay on your phone unless you choose to sync them, and you can delete your account at any time.</p>
         </div>
+        <div data-reveal>
+          <h3>On GitHub</h3>
+          <p>Every release is published there, with its notes and the APK, so you can see what changed and when.</p>
+          <a class="link-plain about-link" href="https://github.com/inigo-code/prompt-heart">github.com/inigo-code/prompt-heart</a>
+        </div>
         <a class="button" href="mailto:inigo@tosstheworld.org?subject=Prompt%20Heart" data-reveal>Write to Inigo</a>
       </div>
     </div>
@@ -225,9 +234,9 @@
       <span style="--h:100%">P</span><span style="--h:78%">R</span><span style="--h:88%">O</span><span style="--h:70%">M</span><span style="--h:94%">P</span><span style="--h:82%">T</span><span class="gap" aria-hidden="true"></span><span class="b-heart" style="--h:100%">H</span><span class="b-heart" style="--h:74%">E</span><span class="b-heart" style="--h:90%">A</span><span class="b-heart" style="--h:68%">R</span><span class="b-heart" style="--h:86%">T</span>
     </a>
     <div class="foot-cols">
-      <nav aria-label="Get the app"><h3>Get it</h3><a class="link" href="https://github.com/inigo-code/prompt-heart/releases/download/v1.6.0/promptheart-1.6.0.apk">Download the APK</a><a class="link" href="fdroid.html">F-Droid</a><a class="link" href="https://github.com/inigo-code/prompt-heart/releases">All releases</a></nav>
+      <nav aria-label="Get the app"><h3>Get it</h3><a class="link" href="https://github.com/inigo-code/prompt-heart/releases/download/v1.6.0/promptheart-1.6.0.apk">Download the APK</a><a class="link" href="fdroid.html">F-Droid</a><a class="link" href="https://github.com/inigo-code/prompt-heart">Prompt Heart on GitHub</a></nav>
       <nav aria-label="Help"><h3>Help</h3><a class="link" href="privacy.html">Privacy policy</a><a class="link" href="delete-account.html">Delete your account</a><a class="link" href="#questions">Questions</a></nav>
-      <nav aria-label="Also by Inigo"><h3>Also by Inigo</h3><a class="link" href="https://inigo-code.github.io/watch-heart-site/">Watch Heart</a><a class="link" href="https://github.com/inigo-code">GitHub</a></nav>
+      <nav aria-label="Also by Inigo"><h3>Also by Inigo</h3><a class="link" href="https://inigo-code.github.io/watch-heart-site/">Watch Heart</a><a class="link" href="https://github.com/inigo-code">More on GitHub</a></nav>
       <div class="foot-contact"><h3>Contact</h3><a class="link" href="mailto:inigo@tosstheworld.org?subject=Prompt%20Heart">inigo@tosstheworld.org</a><p>Questions, ideas and bugs are all welcome.</p></div>
     </div>
     <div class="foot-last">
