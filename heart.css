@@ -153,9 +153,12 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .foot-cols h2 { font-size: var(--s-small); font-weight: 700; margin-bottom: 10px; }
 .foot-cols a { display: block; overflow-wrap: anywhere; padding-block: 5px; text-decoration: none; color: var(--muted); transition: color 180ms ease; }
 .foot-cols a:hover { color: var(--ink); }
-/* A link to Heart Apps carries its mark, so every site points home the same way. */
-.foot-cols .to-home { display: flex; align-items: center; gap: 8px; }
-.foot-cols .to-home img { width: 20px; height: 20px; }
+/* Links to the other apps carry their icons. The link home to Heart Apps is a chip, its mark and name on one line. */
+.foot-cols .to-app { display: flex; align-items: center; gap: 10px; }
+/* The icons are dark tiles; the ring keeps their edge visible on a dark footer. */
+.foot-cols .to-app img { flex: none; width: 24px; height: 24px; border-radius: 7px; box-shadow: 0 0 0 1px var(--surface-2); }
+.foot-cols .to-home { display: inline-flex; align-items: center; gap: 8px; margin-top: 10px; padding: 7px 16px 7px 10px; border-radius: 999px; background: var(--surface-2); color: var(--ink); font-weight: 500; white-space: nowrap; }
+.foot-cols .to-home img { flex: none; width: 22px; height: 22px; }
 .foot-last { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 48px; color: var(--muted); font-size: var(--s-small); }
 
 /* ---------- entrance: each part rises once as it arrives; nothing waits on the script ---------- */
