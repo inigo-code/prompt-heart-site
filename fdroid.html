@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Get It on F-Droid · Prompt Heart</title>
+<meta name="description" content="Install Prompt Heart and get automatic updates with F-Droid.">
+<link rel="icon" href="icon.png">
+<link rel="stylesheet" href="style.css">
+<style>
+  .qr { display: block; width: 220px; max-width: 100%; margin: 8px auto; border-radius: 12px; background: #fff; }
+  .button { display: block; text-align: center; background: var(--accent); color: #1c1a17; font-weight: 800; text-decoration: none; border-radius: 14px; padding: 14px 18px; margin: 14px 0; }
+  code.wrap { display: block; overflow-wrap: anywhere; font-size: 14px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 10px 12px; }
+</style>
+</head>
+<body>
+<main>
+  <header class="brand"><img src="icon.png" alt=""><a href="./">Prompt Heart</a></header>
+  <h1>Get Prompt Heart with F-Droid</h1>
+  <p class="muted">Add the Prompt Heart repository to F-Droid (or Neo Store, Droid-ify) to install the app and get updates automatically. These are the same signed APKs as the GitHub releases, so it keeps a GitHub install up to date. Moving from 1.4.0? Version 1.5.0 is a new app: install it, sign in, and your prompts come back.</p>
+
+  <h2>On your phone</h2>
+  <div class="card">
+    <a class="button" href="fdroidrepos://inigo-code.github.io/prompt-heart-site/fdroid/repo?fingerprint=7D5DC9786FCF003B861F79C3B3CA0492BEF9BC83BA05A3A8FDB3C972E5105A75">Add to F-Droid</a>
+    <p>Tap the button with F-Droid installed. If nothing happens, open F-Droid → Settings → Repositories → <strong>+</strong>, and paste the address below.</p>
+  </div>
+
+  <h2>From another screen</h2>
+  <div class="card">
+    <p>In F-Droid, go to Settings → Repositories → <strong>+</strong> and scan this code.</p>
+    <img class="qr" src="fdroid-qr.png" alt="QR code for the Prompt Heart F-Droid repository">
+  </div>
+
+  <h2>Repository details</h2>
+  <div class="card">
+    <p><strong>Address</strong></p>
+    <code class="wrap">https://inigo-code.github.io/prompt-heart-site/fdroid/repo</code>
+    <p><strong>Fingerprint (SHA-256)</strong></p>
+    <code class="wrap">7D 5D C9 78 6F CF 00 3B 86 1F 79 C3 B3 CA 04 92 BE F9 BC 83 BA 05 A3 A8 FD B3 C9 72 E5 10 5A 75</code>
+    <p class="muted">F-Droid checks the repository against this fingerprint, so you only ever get files signed by Prompt Heart's key.</p>
+  </div>
+
+  <footer><a href="./">Prompt Heart</a> · <a href="privacy.html">Privacy policy</a> · <a href="mailto:inigo@tosstheworld.org">inigo@tosstheworld.org</a></footer>
+</main>
+</body>
+</html>

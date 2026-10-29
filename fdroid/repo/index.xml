@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?><fdroid><repo icon="icon.png" name="Prompt Heart" pubkey="3082050e308202f6a003020102020900d99d26f63a14de60300d06092a864886f70d01010b05003034310e300c060355040a1305496e69676f312230200603550403131950726f6d707420486561727420462d44726f6964207265706f3020170d3236313032363139343130385a180f32303534303331333139343130385a3034310e300c060355040a1305496e69676f312230200603550403131950726f6d707420486561727420462d44726f6964207265706f30820222300d06092a864886f70d01010105000382020f003082020a0282020100b93aa5a0182ce66bd4807a318e2932ef425074a0f953dc1d4261a3921a6b81a62633fb91ea180c96cb4f8254b416bce6da25a17ba1ce1c9b5e69f1c17db647d6588669891b62e2d99edc662c4460c43e9783cd137b90dbf7cb553f2fe7128cedfe6b12e37a4f97227d55efbdbf3667bf5bbdcc5d2b4aaeef23d1032ffcf3228bc84f170892ebf4c98db9c6fc2d03b495d143aad907f5be05ce773737ec5596bc6e1a68e52750e99efd4fd2e232924e887b8ee4e46a6cc74027792b025069277c2ce7d084917afe682a41d4c286915b9ff78cc0dae2743a011af7223c22dd0d2474ae07b62e631f468f3e9c92d6819706a4465c35b8cfbc42a718c37e04ddb987be91ff84204c5ddea8aa409d068eb86cab2d76b26eea2d193422bde02b7d15cbd2f2fd0ca261e2b3062cdfe34f1a744f08bbe0c51ec5b2e5c11df3a10ffbc10d2b983ead093f4b7eae67392a7397cb5ea4e0f3e04b4fb98dbb4155187c6d70b79fdd537732e7ab467fd8023a1d2f03231438dd5202ed1c62067647605a16510d43a1dfe3a70d03c1e6c06612c394044cd4fc8694910a9a58ff821441aa293d56ef7308670fa9184a99b3c2da130172e754cf39bcb1f9aa1b0b6e0ba33fcabf0c27e929c750232405f88a5420f07a418e237a4c8169503b91aec3c309af4bea3e8b6fbe603da99c83785727bcc34b6d2d243c0e702604f8ed3b4bdb1401fe80130203010001a321301f301d0603551d0e04160414fd4e641bbf2f86b8fe593a3b0c3425eec5751430300d06092a864886f70d01010b050003820201008057b42bb413043a25252bf4ae5aa0a23937eb9071faad703b3559c1dfe643c860e235b2cabfe89be6c378c54e9dc84bf1ccdc68f547a83c72f67d4aac155d99b0c99cc1d058d8e66754587019768cd8884cdfd72935a347e4407acbc3520bb560e29345e83ef2005b51198c74ccf24d8279b8f4f11e22a5c3d4dcf842d297d1fb723d521c8292029864eba28fa6a3afe8f246a42ef6aa8156cb9dec393446236bc10ba5fdcd1d7b3a443ff4a2264fc6f1837f5182d457ee500229ff266b21294cfa44635855627a758b4739e762c95be39e157e563f57a4b48d1f4a9e0e1e6a84a6d33f11948e5e4f45dc40f2bb7b0d2163d52043abf7c4611e7a4db62d73703abab1d8241fee4ef4c869d1f16ab69f4bd7affbe533be10a3204aecd6320e974fc2f3457a24e0b59b23fd91a93ec13c23d4adcd086e4108c4739052e03a5287545f1e3db5223e5594c5076b10e99a2797c06d33b007028ae7a3337ebbe5b6f7f1e7a2af329f783510731a3219b2cc1889a5373ec38787f884013226417727328abcd1516d981aa42ed22049a6f640118f2d8f266b3cf7ac0e3ca0ccb1c63a51dd9a7cae0f8d2bb5df24a8a9574f3d961422de61baa68db5602d9f3e1cdf910b66594d7082499aa8dc4c04d2bee6961ff5ff5c7f54aaf98b4f1591d9f937610ba80887a942ee8720c95b350ec0bae9c2dba33df10d9123f3997fcf36eaacc751" timestamp="1793255981" url="https://inigo-code.github.io/prompt-heart-site/fdroid/repo" version="20002"><description>The official F-Droid repository for Prompt Heart, a notes-style app for saving AI prompts and copying them in one tap. Same signed APKs as the GitHub releases.</description></repo><application id="com.inigocode.promptheart"><id>com.inigocode.promptheart</id><added>2026-10-26</added><lastupdated>2026-10-29</lastupdated><name>Prompt Heart</name><summary>Save your best AI prompts and copy them in one tap</summary><desc>Prompt Heart is the home for the AI prompts that work. Save them like notes, fill in the
+blanks, and copy any prompt in one tap. Then jump straight into ChatGPT, Claude, Gemini,
+Grok, Perplexity and more.
+
+* One tap to copy any prompt from the home screen, with pins, search and #tags
+* A library of 100 ready-made prompts for images, work, writing, code and more
+* Templates: write {{placeholders}} once and fill them in with a live preview
+* Copy &amp; open: copies your prompt and opens your AI app, ready to paste
+* Categories, tags, bulk select, version history and a 30-day Trash
+* A profile with your most-used prompts, a year of activity, streaks and achievements
+* Import from spreadsheets, Notion, JSON or Markdown, and export as CSV
+* Share text or images from any app into Prompt Heart, or share your profile card
+* Works fully offline; an optional free account syncs across devices
+* Light, dark or system theme, accent colours, list or grid layout
+* No ads, no analytics, no tracking
+
+Privacy policy: https://inigo-code.github.io/prompt-heart-site/privacy.html
+
+Prompt Heart is an independent app. It isn't affiliated with or endorsed by OpenAI,
+Anthropic, Google, xAI, Perplexity, Microsoft, DeepSeek or Mistral AI.</desc><license>Unknown</license><categories>Writing</categories><category>Writing</category><web>https://inigo-code.github.io/prompt-heart-site/</web><source></source><tracker></tracker><author>Inigo</author><email>inigo@tosstheworld.org</email><marketversion></marketversion><marketvercode>7</marketvercode><package><version>1.7.0</version><versioncode>7</versioncode><apkname>promptheart-1.7.0.apk</apkname><hash type="sha256">e8002bb9c5a777e090c2f3c38a833840689cf0e28f929b23cbadcfa9ded58754</hash><size>48858099</size><sdkver>24</sdkver><targetSdkVersion>36</targetSdkVersion><added>2026-10-29</added><sig>da1eef3949740d273ea9cbb7b1f004e9</sig><permissions>ACCESS_NETWORK_STATE,INTERNET,USE_BIOMETRIC,USE_FINGERPRINT,VIBRATE,com.inigocode.promptheart.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</permissions><nativecode>arm64-v8a,armeabi-v7a</nativecode></package></application><application id="com.inigocode.promptnotes"><id>com.inigocode.promptnotes</id><added>2026-10-26</added><lastupdated>2026-10-26</lastupdated><name>Prompt Heart (old version)</name><summary>Save your best AI prompts and copy them in one tap</summary><desc>This is the old Prompt Heart (1.4.0 and earlier). Prompt Heart has moved to a new app ID: install
+the new &quot;Prompt Heart&quot; from this repository, sign in, and your prompts come back.
+
+Prompt Heart is the home for the AI prompts that work. Save them like notes, fill in the
+blanks, and copy any prompt in one tap. Then jump straight into ChatGPT, Claude, Gemini,
+Grok, Perplexity and more.
+
+* One tap to copy any prompt from the home screen, with pins, search and #tags
+* Templates: write {{placeholders}} once and fill them in with a live preview
+* Copy &amp; open: copies your prompt and opens your AI app, ready to paste
+* Categories, tags, bulk select, version history and a 30-day Trash
+* Share text or images from any app into Prompt Heart
+* Works fully offline; an optional free account syncs across devices
+* Light, dark or system theme, accent colours, list or grid layout
+* No ads, no analytics, no tracking
+
+Privacy policy: https://inigo-code.github.io/prompt-heart-site/privacy.html
+
+Prompt Heart is an independent app. It isn't affiliated with or endorsed by OpenAI,
+Anthropic, Google, xAI, Perplexity, Microsoft, DeepSeek or Mistral AI.</desc><license>Unknown</license><categories>Writing</categories><category>Writing</category><web>https://inigo-code.github.io/prompt-heart-site/</web><source></source><tracker></tracker><author>Inigo</author><email>inigo@tosstheworld.org</email><marketversion></marketversion><marketvercode>1</marketvercode><package><version>1.4.0</version><versioncode>1</versioncode><apkname>promptheart-1.4.0.apk</apkname><hash type="sha256">b0ba38691c9446534dcf712468293d8bd930cdaf8905b09ab7a3d9b84287f9f3</hash><size>94143401</size><sdkver>24</sdkver><targetSdkVersion>36</targetSdkVersion><added>2026-10-26</added><sig>52548d0d3d17bb6d59da475df68879a9</sig><permissions>ACCESS_NETWORK_STATE,INTERNET,VIBRATE,com.inigocode.promptnotes.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION</permissions><nativecode>arm64-v8a,armeabi-v7a,x86,x86_64</nativecode></package></application></fdroid>
