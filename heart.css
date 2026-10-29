@@ -153,6 +153,9 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 .foot-cols h2 { font-size: var(--s-small); font-weight: 700; margin-bottom: 10px; }
 .foot-cols a { display: block; overflow-wrap: anywhere; padding-block: 5px; text-decoration: none; color: var(--muted); transition: color 180ms ease; }
 .foot-cols a:hover { color: var(--ink); }
+/* A link to Heart Apps carries its mark, so every site points home the same way. */
+.foot-cols .to-home { display: flex; align-items: center; gap: 8px; }
+.foot-cols .to-home img { width: 20px; height: 20px; }
 .foot-last { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 48px; color: var(--muted); font-size: var(--s-small); }
 
 /* ---------- entrance: each part rises once as it arrives; nothing waits on the script ---------- */
