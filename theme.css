@@ -1,0 +1,82 @@
+/* Prompt Heart: warm paper by day, warm dark by night, amber for the one action. */
+:root {
+  --bg: #F6F4EF;
+  --surface: #ECE8E0;
+  --surface-2: #E1DCD2;
+  --card: #FFFFFF;
+  --soft: #F7E7C4;
+  --ink: #1C1A17;
+  --muted: #5F5A53;
+  --accent: #D99A1E;
+  --accent-ink: #1C1A17;
+  --accent-hover: #E5A935;
+  --field: #D99A1E;
+  --field-ink: #1C1A17;
+  --font-display: 'Fredoka', ui-rounded, 'Arial Rounded MT Bold', system-ui, sans-serif;
+  --font-text: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+  --display-weight: 600;
+  --display-track: -0.02em;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121110;
+    --surface: #1C1B19;
+    --surface-2: #272522;
+    --card: #1C1B19;
+    --soft: #3A2F17;
+    --ink: #EFEDEA;
+    --muted: #B3ACA2;
+    --accent: #F2B84B;
+    --accent-ink: #121110;
+    --accent-hover: #F6C76E;
+    --field: #F2B84B;
+    --field-ink: #121110;
+  }
+}
+
+.brand img { border-radius: 10px; }
+.way-mark { display: grid; place-items: center; width: 48px; height: 48px; border-radius: 12px; background: var(--field-ink); color: var(--field); font-weight: 700; }
+code { font-size: 0.92em; padding: 0.1em 0.35em; border-radius: 6px; background: var(--surface-2); }
+
+/* The hero: the words beside a working fill-in sheet on an amber stage. */
+.hero { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: stretch; row-gap: clamp(2rem, 4vw, 3.5rem); }
+@media (min-width: 961px) {
+  .hero-text { display: contents; }
+  .hero h1 { grid-column: 1 / -1; }
+  .hero-side { grid-column: 1; align-self: start; }
+  .stage { grid-column: 2; grid-row: 2; }
+}
+.hero-side { display: grid; gap: 32px; align-content: start; }
+.hero-text .lede { max-width: 26ch; }
+.stage { display: flex; align-items: flex-end; justify-content: center; padding: clamp(2rem, 4vw, 3.5rem) clamp(1rem, 2vw, 1.5rem) 0; border-radius: var(--radius); background: var(--accent); }
+
+/* The fill-in sheet, rebuilt from the app at true size. */
+.sheet { width: 100%; display: grid; gap: 16px; padding: 16px 26px 32px; border-radius: var(--radius) var(--radius) 0 0; background: var(--card); color: var(--ink); font-size: 1rem; }
+.grab { justify-self: center; width: 40px; height: 5px; border-radius: 3px; background: var(--surface-2); }
+.sheet-title { font-family: var(--font-display); font-size: 1.375rem; font-weight: 600; }
+.sheet-picks { display: flex; flex-wrap: wrap; gap: 8px; }
+.sheet-picks button { min-height: 44px; padding: 0 14px; border-radius: 999px; background: var(--surface); font-weight: 600; transition: background-color 180ms ease, transform 140ms var(--ease-out); }
+.sheet-picks button[aria-checked="true"] { background: var(--ink); color: var(--bg); }
+.sheet-picks button:active { transform: scale(0.96); }
+.sheet-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 14px; }
+.sheet-fields label { display: grid; gap: 6px; font-weight: 600; font-size: var(--s-small); color: var(--muted); }
+.sheet-fields label.wide { grid-column: 1 / -1; }
+.sheet-fields input, .sheet-fields textarea { width: 100%; min-height: 48px; padding: 12px 16px; border-radius: 16px; border: 2px solid transparent; background: var(--bg); color: var(--ink); font: inherit; transition: border-color 180ms ease; }
+.sheet-fields textarea { min-height: 76px; resize: vertical; line-height: 1.45; }
+.sheet-fields input:focus, .sheet-fields textarea:focus { outline: none; border-color: var(--ink); }
+.sheet-fields input::placeholder, .sheet-fields textarea::placeholder { color: var(--muted); }
+.sheet-preview { padding: 16px 18px; border-radius: 20px; background: var(--bg); line-height: 1.5; white-space: pre-line; }
+.sheet-preview mark { padding: 0 0.2em; border-radius: 6px; background: var(--soft); color: var(--ink); font-weight: 600; }
+.sheet-preview .filled { font-weight: 600; }
+.sheet-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.sheet-actions .button { min-height: 48px; padding: 0 1.3rem; }
+.sheet-actions #filler-copy { min-width: 7.5rem; }
+
+@media (max-width: 960px) {
+  .hero { grid-template-columns: 1fr; gap: 40px; }
+}
+@media (max-width: 680px) {
+  .stage { padding: 20px 12px 0; }
+  .sheet { padding: 14px 18px 24px; }
+  .sheet-fields { grid-template-columns: 1fr; }
+}
