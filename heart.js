@@ -33,7 +33,7 @@
 
   // A soft light follows the pointer across the big cards.
   if (matchMedia('(hover: hover) and (pointer: fine)').matches && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.querySelectorAll('.app, .win-app, .get, .row-media, .more > div, .way, .stage').forEach((el) => {
+    document.querySelectorAll('.app, .win-app, .get, .row-media, .way, .stage').forEach((el) => {
       el.setAttribute('data-spot', '');
       el.addEventListener('pointermove', (e) => {
         const r = el.getBoundingClientRect();
