@@ -1,0 +1,65 @@
+:root {
+  --bg: #f7f3ea;
+  --card: #fffdf8;
+  --text: #1c1a17;
+  --muted: #6f685f;
+  --border: #e6dfd1;
+  --accent: #b97c0e;
+  --accent-soft: #f6e6c4;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121110;
+    --card: #1c1a17;
+    --text: #f2efea;
+    --muted: #b9b2a8;
+    --border: #2e2b27;
+    --accent: #f2b84b;
+    --accent-soft: #3a2f1a;
+  }
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 17px/1.6 Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+main { max-width: 720px; margin: 0 auto; padding: 40px 16px 64px; }
+header.brand { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+header.brand img { width: 56px; height: 56px; border-radius: 14px; }
+header.brand a { color: inherit; text-decoration: none; font-weight: 800; font-size: 22px; letter-spacing: -0.3px; }
+h1 { font-size: 34px; line-height: 1.15; letter-spacing: -0.6px; margin: 0 0 8px; }
+h2 { font-size: 21px; margin: 36px 0 8px; letter-spacing: -0.2px; }
+p, li { color: var(--text); }
+.muted { color: var(--muted); }
+a { color: var(--accent); }
+ul { padding-left: 22px; }
+li { margin: 4px 0; }
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  margin: 18px 0;
+}
+.card.highlight { background: var(--accent-soft); border-color: transparent; }
+.links { display: grid; gap: 12px; margin-top: 28px; }
+.links a {
+  display: block;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 16px 18px;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+}
+.links a span { display: block; font-weight: 500; color: var(--muted); font-size: 15px; }
+table { width: 100%; border-collapse: collapse; font-size: 15px; }
+th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { color: var(--muted); font-weight: 700; }
+footer { margin-top: 48px; font-size: 14px; color: var(--muted); }
+.card > :first-child { margin-top: 0; }
+.card > :last-child { margin-bottom: 0; }
