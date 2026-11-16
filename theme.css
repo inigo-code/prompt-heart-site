@@ -16,6 +16,7 @@
   --font-text: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
   --display-weight: 600;
   --display-track: -0.02em;
+  color-scheme: light dark;
 }
 @media (prefers-color-scheme: dark) {
   :root {

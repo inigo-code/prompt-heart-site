@@ -2,6 +2,8 @@
    its theme file; everything here reads only the tokens below. */
 
 :root {
+  /* Dark by default, so scrollbars, form fields and the loading canvas are dark too. Themes that follow the system say light dark. */
+  color-scheme: dark;
   --bg: #0E0D10;
   --surface: #18161B;
   --surface-2: #232026;
