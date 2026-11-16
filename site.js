@@ -56,7 +56,7 @@ const libraryReady = fetch('assets/library.json').then((r) => r.json()).catch(()
     chatgpt.href = open('https://chatgpt.com/');
     claude.href = open('https://claude.ai/new');
     const left = blanksOf(current.b).filter((b) => !v[b.name] && !b.fallback).length;
-    copyBtn.textContent = left ? `Copy (${left} blank)` : 'Copy';
+    copyBtn.textContent = left ? `Copy (${left} blank${left === 1 ? '' : 's'})` : 'Copy';
   };
 
   const build = () => {
