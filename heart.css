@@ -199,10 +199,20 @@ main::before { height: min(1100px, 130vh); background: radial-gradient(60% 70% a
 @media (hover: hover) and (pointer: fine) { .foot-cols a:not(.to-home):hover { transform: translateX(3px); } }
 .foot-last { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 48px; padding-top: 24px; border-top: 1px solid var(--line); color: var(--muted); font-size: var(--s-small); }
 
-/* ---------- light that follows the pointer across a card ---------- */
+/* ---------- light that follows the pointer across a card ----------
+   Two parts, both placed by heart.js. The pool lies on the card's surface, under the words and
+   pictures, and brightens the card's own colour (soft light) instead of greying it. The rim catches
+   the light along the edge, on the card under the pointer and, more faintly, on the cards beside it. */
 [data-spot] { position: relative; isolation: isolate; }
-[data-spot]::after { content: ''; position: absolute; inset: 0; z-index: 2; border-radius: inherit; pointer-events: none; background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 0.13), transparent 45%); opacity: 0; transition: opacity 300ms ease; }
-@media (hover: hover) and (pointer: fine) { [data-spot]:hover::after { opacity: 1; } }
+[data-spot] > .spot { position: absolute; inset: 0; z-index: -1; border-radius: inherit; pointer-events: none; mix-blend-mode: soft-light;
+  background: radial-gradient(var(--spot-size, 440px) circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 0.78), rgb(255 255 255 / 0.24) 38%, transparent 68%);
+  opacity: 0; transition: opacity 650ms var(--ease-out); }
+[data-spot].is-lit > .spot { opacity: 1; transition-duration: 280ms; }
+[data-spot]::after { content: ''; position: absolute; inset: 0; z-index: 3; padding: 1.5px; border-radius: inherit; pointer-events: none;
+  background: radial-gradient(300px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 0.95), rgb(255 255 255 / 0.3) 40%, transparent 72%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);
+  opacity: var(--near, 0); transition: opacity 200ms linear; }
 
 /* ---------- entrance: the first screen rises once on load; nothing else waits to be shown ---------- */
 @keyframes heart-rise { from { opacity: 0; transform: translateY(26px); } to { opacity: 1; transform: none; } }
